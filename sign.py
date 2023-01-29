@@ -12,8 +12,9 @@ def sign(m):
 	n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 	#d = random.randrange(1,n)
 	key = gen_keypair(secp256k1)
+	private_key = key[0]
 	public_key = key[1]
-	sig = ecdsa.sign(m d, secp256k1, hashfunc=SHA256)
+	sig = ecdsa.sign(m, private_key, secp256k1, hashfunc=SHA256)
 
 	#generate signature
 	#Your code here
