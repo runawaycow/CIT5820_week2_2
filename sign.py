@@ -1,7 +1,7 @@
 from fastecdsa.curve import secp256k1
 from fastecdsa.keys import export_key, gen_keypair
 
-from fastecdsa import curve, ecdsa, keys, point, sign
+from fastecdsa import curve, ecdsa, keys, point
 from hashlib import sha256
 
 import random
@@ -13,7 +13,7 @@ def sign(m):
 	#d = random.randrange(1,n)
 	key = gen_keypair(secp256k1)
 	public_key = key[1]
-	sig = sign(M, d, secp256k1, hashfunc=SHA256)
+	sig = ecdsa.sign(M, d, secp256k1, hashfunc=SHA256)
 
 	#generate signature
 	#Your code here
