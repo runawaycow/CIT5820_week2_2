@@ -10,7 +10,7 @@ def sign(m):
 	n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 	d = random.randrange(1,n)
 	public_key = fastecdsa.keys.get_public_key(d,fastecdsa.curve.Curve('SECP256K1'))
-	sig = fastecdsa.ecdsa.sign(M, d, fastecdsa.curve.Curve('SECP256K1'), hashfunc=SHA256, False)
+	sig = fastecdsa.ecdsa.sign(M, d, fastecdsa.curve.Curve('SECP256K1'), hashfunc=SHA256)
 
 	#generate signature
 	#Your code here
